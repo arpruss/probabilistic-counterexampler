@@ -28,7 +28,7 @@ def checkConclusion(a,b,c):
     try:
         return P(a, b|c) > P(a, b) 
     except:
-        return false
+        return False
    
 for m1 in range(sides): 
     for n2 in range(2**sides): 
