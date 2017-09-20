@@ -28,6 +28,9 @@ Omega = set(range(1,sides+1))
 class mySet(set):
     def __invert__(self):
         return Omega-self
+        
+    def __str__(self):
+        return str(sorted(list(self))).replace("[","{").replace("]","}")
 
 def makeSet(binary):
     s = mySet()
