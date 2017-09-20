@@ -40,6 +40,9 @@ for premise in premises:
     addVariables(premise)
 addVariables(conclusion)
 
+compiledPremises = [compile(premise, '<string>', 'eval') for premise in premises]
+compiledConclusion = compile(conclusion, '<string>', 'eval')
+
 variableTuple = tuple(sorted(variables))
 
 if len(variableTuple) < 1 or len(variableTuple) > 5:
@@ -76,7 +79,7 @@ def supports(p,q):
     
 def checkPremises(vars):
     try:
-        for premise in premises:
+        for premise in compiledPremises:
             if not eval(premise, vars):
                 return False
         return True
@@ -85,7 +88,7 @@ def checkPremises(vars):
         
 def checkConclusion(vars):
     try:
-        return eval(conclusion, vars)
+        return eval(compiledConclusion, vars)
     except ZeroDivisionError:
         return False
 
