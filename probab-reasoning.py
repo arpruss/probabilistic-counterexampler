@@ -1,3 +1,6 @@
+sides = 6
+Omega = set(range(1,sides+1))
+    
 def makeSet(binary):
     s = set()
     x = 1
@@ -7,8 +10,6 @@ def makeSet(binary):
         x += 1
         binary >>= 1
     return s
-    
-sides = 6
     
 def P(*s):
     if len(s) > 1:
