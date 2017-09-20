@@ -14,18 +14,18 @@ if len(sys.argv)>2:
     premises = sys.argv[1:-1]
     conclusion = sys.argv[-1]
 else:
-    print("python probab-reasoning.py [n] premise1 premise2 ... conclusion")
-    print("The premises and conclusion can contain up to five events designated by a single letter.")
-    print("The optional n parameter specifies how many die sides to use.")
+    print("python probab-reasoning.py [n] premise1 premise2 ... conclusion\n")
+    print("The premises and conclusion can contain up to five events designated by \na single letter other than P.\n")
+    print("The optional n parameter specifies how many die sides to use.\n")
     print("Boolean operations allowed:")
     print(" a&b : conjunction of a with b")
     print(" a|b : disjunction of a with b (not to be confused with conditional probability)")
-    print(" ~a  : negation of a")
+    print(" ~a  : negation of a\n")
     print("Probabilistic operations allowed:")
     print(" P(a) : unconditional probability of a")
     print(" P(a,b) : conditional probability of a given b")    
-    print(" supports(a,b) : short for: P(a,b) > P(a)")
-    print("You can operate on the probabilities with standard arithmetical operations and comparisons.")
+    print(" supports(a,b) : short for: P(a,b) > P(a)\n")
+    print("You can operate on the probabilities with standard arithmetical operations and comparisons.\n")
     print("Any expression which involves a divide by zero counts as automatically false.") 
     sys.exit(1)
     
