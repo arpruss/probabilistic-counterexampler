@@ -40,7 +40,7 @@ for premise in premises:
     addVariables(premise)
 addVariables(conclusion)
 
-variableTuple = tuple(sorted(tuple(variables)))
+variableTuple = tuple(sorted(variables))
 
 if len(variableTuple) < 1 or len(variableTuple) > 5:
     print("Number of variables must be between 1 and 5.")
@@ -68,7 +68,7 @@ def makeSet(l, binary):
     
 def P(*s):
     if len(s) > 1:
-        return P(s[0] & s[1]) / P(s[1]) 
+        return len(s[0] & s[1]) / float(len(s[1]))
     return len(s[0]) / float(sides)
     
 def supports(p,q):
