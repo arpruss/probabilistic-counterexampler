@@ -133,7 +133,7 @@ foundCounterexample = False
 for s in generate(0,globals()):
     if checkPremises(s) and not checkConclusion(s):
         foundCounterexample = True
-        print(", ".join(str(variableTuple[i])+"="+str(s[variableTuple[i]]) for i in range(len(variableTuple))))
+        print(", ".join(v+"="+str(s[v]) for v in variableTuple))
                 
 if not foundCounterexample:
     print("No counterexamples found.")
